@@ -1,0 +1,10 @@
+[
+  {
+    "id": "example-game",
+    "name": "Example Game",
+    "banner": "/games/example-game.svg",
+    "description": "A short, exciting description of what this game is about. Swap this out for a real game!",
+    "flowlabUrl": "https://flowlab.io/game/play/REPLACE_WITH_GAME_ID",
+    "embeddable": true
+  }
+]

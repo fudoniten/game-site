@@ -1,0 +1,21 @@
+---
+import Layout from '../layouts/Layout.astro';
+import YouTubeLatest from '../components/YouTubeLatest.astro';
+import site from '../data/site.json';
+
+const { about } = site;
+---
+
+<Layout title="About" description={`About ${about.name}`}>
+  <h1 class="page-title">About {about.name}</h1>
+
+  <div class="about-layout">
+    <img class="about-photo" src={about.photo} alt={about.name} />
+    <div class="about-bio">
+      {about.bio.map((paragraph) => <p>{paragraph}</p>)}
+    </div>
+  </div>
+
+  <h2 class="section-title">Latest video</h2>
+  <YouTubeLatest />
+</Layout>

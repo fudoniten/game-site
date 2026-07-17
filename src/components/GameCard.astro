@@ -1,0 +1,18 @@
+---
+interface Props {
+  id: string;
+  name: string;
+  banner: string;
+  description: string;
+}
+
+const { id, name, banner, description } = Astro.props;
+---
+
+<a class="game-card" href={`/games/${id}/`}>
+  <img class="banner" src={banner} alt={`${name} banner`} loading="lazy" />
+  <div class="card-body">
+    <h2>{name}</h2>
+    <p>{description}</p>
+  </div>
+</a>

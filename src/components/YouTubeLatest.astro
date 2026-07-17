@@ -1,0 +1,31 @@
+---
+import { uploadsPlaylistId } from '../lib/youtube';
+import site from '../data/site.json';
+
+const playlistId = uploadsPlaylistId(site.youtube.channelId);
+---
+
+{
+  playlistId ? (
+    <iframe
+      class="youtube-embed"
+      src={`https://www.youtube-nocookie.com/embed/videoseries?list=${playlistId}`}
+      title="Latest YouTube video"
+      loading="lazy"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    />
+  ) : (
+    <div class="youtube-empty">
+      <p>
+        No YouTube channel is configured yet. Add a <code>channelId</code> to{' '}
+        <code>src/data/site.json</code> to show the latest video here.
+      </p>
+      {site.youtube.channelUrl && (
+        <a class="button secondary" href={site.youtube.channelUrl} target="_blank" rel="noopener noreferrer">
+          Visit the channel
+        </a>
+      )}
+    </div>
+  )
+}

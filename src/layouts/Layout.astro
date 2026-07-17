@@ -1,0 +1,51 @@
+---
+import site from '../data/site.json';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = site.tagline } = Astro.props;
+const currentPath = Astro.url.pathname;
+
+function isActive(path: string) {
+  if (path === '/') return currentPath === '/';
+  return currentPath.startsWith(path);
+}
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta name="description" content={description} />
+    <title>{title} · {site.siteName}</title>
+    <link rel="stylesheet" href="/global.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="brand" href="/">
+          {site.about.name}<span class="dot">&apos;s</span> Games
+        </a>
+        <nav class="site-nav">
+          <a href="/" aria-current={isActive('/') ? 'page' : undefined}>Games</a>
+          <a href="/about" aria-current={isActive('/about') ? 'page' : undefined}>About</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div class="wrap">
+        <slot />
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="wrap">
+        &copy; {new Date().getFullYear()} {site.about.name}. Made with Astro.
+      </div>
+    </footer>
+  </body>
+</html>
