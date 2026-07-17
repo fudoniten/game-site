@@ -1,0 +1,16 @@
+{
+  "siteName": "Jasper's Games",
+  "tagline": "Games made by Jasper",
+  "about": {
+    "name": "Jasper",
+    "photo": "/jasper.svg",
+    "bio": [
+      "Hi, I'm Jasper! I make videogames using FlowLab.",
+      "Replace this with a real bio written by (or about) Jasper."
+    ]
+  },
+  "youtube": {
+    "channelId": "",
+    "channelUrl": ""
+  }
+}

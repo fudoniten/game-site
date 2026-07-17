@@ -1,0 +1,37 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import games from '../../data/games.json';
+
+export function getStaticPaths() {
+  return games.map((game) => ({
+    params: { id: game.id },
+    props: { game },
+  }));
+}
+
+const { game } = Astro.props;
+---
+
+<Layout title={game.name} description={game.description}>
+  <a class="back-link" href="/">&larr; All games</a>
+  <h1 class="page-title">{game.name}</h1>
+  <p class="page-subtitle">{game.description}</p>
+
+  {
+    game.embeddable ? (
+      <iframe
+        class="game-embed"
+        src={game.flowlabUrl}
+        title={game.name}
+        loading="lazy"
+        allowfullscreen
+      />
+    ) : null
+  }
+
+  <div class="game-actions">
+    <a class="button" href={game.flowlabUrl} target="_blank" rel="noopener noreferrer">
+      Play on FlowLab
+    </a>
+  </div>
+</Layout>

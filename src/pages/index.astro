@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/Layout.astro';
+import GameCard from '../components/GameCard.astro';
+import games from '../data/games.json';
+---
+
+<Layout title="Games">
+  <h1 class="page-title">Games</h1>
+  <p class="page-subtitle">All the games I've made so far, built with FlowLab.</p>
+
+  {
+    games.length > 0 ? (
+      <div class="game-grid">
+        {games.map((game) => (
+          <GameCard id={game.id} name={game.name} banner={game.banner} description={game.description} />
+        ))}
+      </div>
+    ) : (
+      <div class="empty-state">No games yet — check back soon!</div>
+    )
+  }
+</Layout>
