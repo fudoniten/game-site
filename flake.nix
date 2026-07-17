@@ -6,14 +6,10 @@
     flake-utils.url = "github:numtide/flake-utils";
   };
 
-  outputs =
-    { self, nixpkgs, flake-utils }:
-    flake-utils.lib.eachDefaultSystem (
-      system:
-      let
-        pkgs = import nixpkgs { inherit system; };
-      in
-      {
+  outputs = { self, nixpkgs, flake-utils }:
+    flake-utils.lib.eachDefaultSystem (system:
+      let pkgs = import nixpkgs { inherit system; };
+      in {
         packages.default = pkgs.buildNpmPackage {
           pname = "jasper-games-site";
           version = "0.1.0";
@@ -23,7 +19,7 @@
           # Generated from package-lock.json. If this ever goes stale (e.g.
           # after `npm install`ing a new dependency), `nix build` will fail
           # and print the correct hash to paste in here.
-          npmDepsHash = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
+          npmDepsHash = "sha256-3CVkV+QieYh5VvVNTx4pZpqzX/dTTWC8LrrckeS/yaI=";
 
           # `astro check` needs the dev server's TypeScript project to
           # resolve; the plain build is enough for a package output and
@@ -43,9 +39,6 @@
           doDist = false;
         };
 
-        devShells.default = pkgs.mkShell {
-          buildInputs = [ pkgs.nodejs_22 ];
-        };
-      }
-    );
+        devShells.default = pkgs.mkShell { buildInputs = [ pkgs.nodejs_22 ]; };
+      });
 }
