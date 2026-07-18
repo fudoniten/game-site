@@ -1,7 +1,7 @@
 # Jasper's Games
 
 A small static site listing Jasper's videogames (built with [FlowLab](https://flowlab.io)),
-an about page, and his latest YouTube upload.
+an about page, and a few of his YouTube videos.
 
 ## Editing content
 
@@ -32,22 +32,25 @@ An array of games:
 
 ### `src/data/site.json`
 
-Site name, Jasper's bio/photo, and his YouTube channel:
+Site name, Jasper's bio/photo, and his YouTube videos:
 
 ```json
 {
   "youtube": {
-    "channelId": "UCxxxxxxxxxxxxxxxxxxxxxx",
-    "channelUrl": "https://www.youtube.com/@handle"
+    "channelUrl": "https://www.youtube.com/@handle",
+    "videos": [
+      "https://www.youtube.com/watch?v=xxxxxxxxxxx",
+      "https://www.youtube.com/watch?v=xxxxxxxxxxx",
+      "https://www.youtube.com/watch?v=xxxxxxxxxxx"
+    ]
   }
 }
 ```
 
-`channelId` is the `UC...` ID for the channel (not the `@handle`) — find it in the channel's
-"Share channel" menu, or by viewing the channel page source and searching for `"channelId"`.
-Leaving it blank shows a fallback message with a link to `channelUrl` instead. The latest-video
-embed works by pointing at the channel's auto-generated "uploads" playlist, so it needs no API
-key and no server-side fetching.
+`videos` is a list of YouTube video URLs to embed on the About page (any normal YouTube URL
+works — `youtube.com/watch?v=...`, `youtu.be/...`, or `youtube.com/shorts/...`). List as many
+or as few as you like; there's no fixed limit, though the layout is designed around three.
+Leaving the list empty shows a fallback message with a link to `channelUrl` instead.
 
 Add a photo to `public/` (e.g. `public/jasper.jpg`) and update `about.photo` to match.
 
