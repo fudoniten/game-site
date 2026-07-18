@@ -1,25 +1,31 @@
 ---
-import { uploadsPlaylistId } from '../lib/youtube';
+import { videoId } from '../lib/youtube';
 import site from '../data/site.json';
 
-const playlistId = uploadsPlaylistId(site.youtube.channelId);
+const videos = (site.youtube.videos ?? [])
+  .map((url) => ({ url, id: videoId(url) }))
+  .filter((video): video is { url: string; id: string } => Boolean(video.id));
 ---
 
 {
-  playlistId ? (
-    <iframe
-      class="youtube-embed"
-      src={`https://www.youtube-nocookie.com/embed/videoseries?list=${playlistId}`}
-      title="Latest YouTube video"
-      loading="lazy"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen
-    />
+  videos.length > 0 ? (
+    <div class="youtube-grid">
+      {videos.map((video) => (
+        <iframe
+          class="youtube-embed"
+          src={`https://www.youtube-nocookie.com/embed/${video.id}`}
+          title="Jasper's video"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        />
+      ))}
+    </div>
   ) : (
     <div class="youtube-empty">
       <p>
-        No YouTube channel is configured yet. Add a <code>channelId</code> to{' '}
-        <code>src/data/site.json</code> to show the latest video here.
+        No videos are configured yet. Add video URLs to <code>youtube.videos</code> in{' '}
+        <code>src/data/site.json</code> to show them here.
       </p>
       {site.youtube.channelUrl && (
         <a class="button secondary" href={site.youtube.channelUrl} target="_blank" rel="noopener noreferrer">

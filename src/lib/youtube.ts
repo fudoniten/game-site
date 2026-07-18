@@ -1,10 +1,18 @@
 /**
- * YouTube's auto-generated "uploads" playlist ID is derivable from a channel ID
- * by swapping the leading "UC" for "UU". Embedding that playlist (as
- * videoseries) shows the channel's most recent upload first, with no API
- * key and no server-side fetch required.
+ * Extracts the video ID from common YouTube URL shapes
+ * (watch?v=, youtu.be/, embed/, shorts/) so a plain URL can be embedded.
  */
-export function uploadsPlaylistId(channelId: string): string | null {
-  if (!channelId || !channelId.startsWith('UC')) return null;
-  return `UU${channelId.slice(2)}`;
+export function videoId(url: string): string | null {
+  try {
+    const parsed = new URL(url);
+    if (parsed.hostname === 'youtu.be') {
+      return parsed.pathname.slice(1) || null;
+    }
+    if (parsed.pathname.startsWith('/embed/') || parsed.pathname.startsWith('/shorts/')) {
+      return parsed.pathname.split('/')[2] || null;
+    }
+    return parsed.searchParams.get('v');
+  } catch {
+    return null;
+  }
 }
