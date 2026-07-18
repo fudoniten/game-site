@@ -10,7 +10,11 @@
     ]
   },
   "youtube": {
-    "channelId": "UCpWNzq_3SHeD41G5-8e6RZQ",
-    "channelUrl": "https://www.youtube.com/@JasperJGaming"
+    "channelUrl": "https://www.youtube.com/@JasperJGaming",
+    "videos": [
+      "https://www.youtube.com/watch?v=VIDEO_ID_1",
+      "https://www.youtube.com/watch?v=VIDEO_ID_2",
+      "https://www.youtube.com/watch?v=VIDEO_ID_3"
+    ]
   }
 }

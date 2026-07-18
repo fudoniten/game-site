@@ -111,8 +111,8 @@ main {
 
 .game-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 1.75rem;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: 2rem;
 }
 
 .game-card {
@@ -192,12 +192,14 @@ main {
 }
 
 .game-embed {
-  width: 100%;
-  aspect-ratio: 16 / 9;
+  display: block;
+  width: 65%;
+  max-width: 640px;
+  aspect-ratio: 3 / 5;
   border: none;
   border-radius: var(--radius);
   background: #000;
-  margin: 1.5rem 0;
+  margin: 1.5rem auto;
 }
 
 .game-actions {
@@ -231,6 +233,12 @@ main {
   font-size: 1.5rem;
   font-weight: 800;
   margin: 3rem 0 1rem;
+}
+
+.youtube-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
 }
 
 .youtube-embed {
@@ -269,5 +277,14 @@ footer.site-footer {
 
   .about-photo {
     max-width: 200px;
+  }
+
+  .youtube-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .game-embed {
+    width: 100%;
+    max-width: none;
   }
 }
