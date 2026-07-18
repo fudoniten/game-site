@@ -6,11 +6,11 @@
     "photo": "/jasper.svg",
     "bio": [
       "Hi, I'm Jasper! I make videogames using FlowLab.",
-      "Replace this with a real bio written by (or about) Jasper."
+      "I also make youtube videos, and this is just a little collection!"
     ]
   },
   "youtube": {
-    "channelId": "",
-    "channelUrl": ""
+    "channelId": "UCpWNzq_3SHeD41G5-8e6RZQ",
+    "channelUrl": "https://www.youtube.com/@JasperJGaming"
   }
 }
