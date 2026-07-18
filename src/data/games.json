@@ -2,7 +2,7 @@
   {
     "id": "blobhead_yay",
     "name": "Blobhead",
-    "banner": "/games/example-game.svg",
+    "banner": "/games/blobby.png",
     "description": "A short game about a blob!",
     "flowlabUrl": "https://flowlab.io/games/play/2991641",
     "embeddable": true
@@ -10,7 +10,7 @@
   {
     "id": "calmer_yay",
     "name": "Calmer",
-    "banner": "/games/example-game.svg",
+    "banner": "/games/calm.png",
     "description": "A little calm platmormer to pass time!",
     "flowlabUrl": "https://flowlab.io/games/play/3013720",
     "embeddable": true
@@ -18,7 +18,7 @@
   {
     "id": "the_racer_yay",
     "name": "The Racer",
-    "banner": "/games/example-game.svg",
+    "banner": "/games/the-racer.png",
     "description": "a short 4 player minigame",
     "flowlabUrl": "https://flowlab.io/games/play/3057050",
     "embeddable": true
@@ -26,14 +26,14 @@
   {
     "id": "dice_roll_yay",
     "name": "Roll A Dice!",
-    "banner": "/games/example-game.svg",
+    "banner": "/games/rolll.png",
     "description": "roll a dice.",
     "flowlabUrl": "https://flowlab.io/games/play/3092560",
     "embeddable": true
   },{
     "id": "The_SILVER_SOUL_yay",
     "name": "The Silver Soul",
-    "banner": "/games/example-game.svg",
+    "banner": "/games/Silver-soul.png",
     "description": "a action platformer ninja game",
     "flowlabUrl": "https://flowlab.io/games/play/3093702",
     "embeddable": true
@@ -41,14 +41,14 @@
   {
     "id": "a_basic_game_yay",
     "name": "A Basic Game",
-    "banner": "/games/example-game.svg",
+    "banner": "/games/basic-game.png",
     "description": "a default texture game",
     "flowlabUrl": "https://flowlab.io/games/play/3098246",
     "embeddable": true
   },{
     "id": "boing_boin_bonanza_yay",
     "name": "Boing Boing Bonanza",
-    "banner": "/games/example-game.svg",
+    "banner": "/games/boigg.png",
     "description": "a simple platformer game, also my second game!",
     "flowlabUrl": "https://flowlab.io/games/play/2993046",
     "embeddable": true
@@ -56,14 +56,14 @@
   {
     "id": "TOUP_yay",
     "name": "TOUP",
-    "banner": "/games/example-game.svg",
+    "banner": "/games/toup.png",
     "description": "a game.",
     "flowlabUrl": "https://flowlab.io/games/play/3011305",
     "embeddable": true
   },{
     "id": "A_RAGE_GAME_YES_yay",
     "name": "A RAGE GAME_YES",
-    "banner": "/games/example-game.svg",
+    "banner": "/games/rage.png",
     "description": "a troll game to frustrate you and your freinds",
     "flowlabUrl": "https://flowlab.io/games/play/3038528",
     "embeddable": true
@@ -71,7 +71,7 @@
   {
     "id": "The_space_mace_yay",
     "name": "The Space Mace",
-    "banner": "/games/example-game.svg",
+    "banner": "/games/space-mace.png",
     "description": "a space shooter game.",
     "flowlabUrl": "https://flowlab.io/games/play/3002493",
     "embeddable": true
